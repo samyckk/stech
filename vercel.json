@@ -1,11 +1,10 @@
 {
   "version": 2,
   "builds": [
-    { "src": "MyWeb/wsgi.py", "use": "@vercel/python" }
+    { "src": "manage.py", "use": "@vercel/python" }
   ],
   "routes": [
     { "src": "/static/(.*)", "dest": "/static/$1" },
-    { "src": "/(.*)", "dest": "MyWeb/wsgi.py" }
-  ],
-  "buildCommand": "python manage.py collectstatic --noinput"
+    { "src": "/(.*)", "dest": "manage.py" }
+  ]
 }
